@@ -5,6 +5,7 @@
 	<artifactId>admin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>admin Maven Webapp</name>
+	<packaging>jar</packaging>
 
 	<properties>
 		<jdk.version>1.7</jdk.version>
@@ -23,13 +24,13 @@
 			<url>https://raw.github.com/sunmable/gooddb_release/master</url>
 		</repository>
 	</repositories>
-	
+
 	<dependencies>
 		<!-- GMVC依赖 -->
 		<dependency>
 			<groupId>wang.igood</groupId>
 			<artifactId>gmvc</artifactId>
-			<version>0.0.8</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>wang.igood</groupId>
@@ -76,33 +77,13 @@
 				</executions>
 			</plugin>
 			<!-- 资源拷贝 -->
-			<!-- 
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.0.2</version>
-				<executions>
-					<execution>
-						<id>copy-resources</id>
-						<phase>validate</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>src/main/webapp</outputDirectory>
-							<resources>
-								<resource>
-									<directory>src/main/resources/META-INF/resources</directory>
-									<includes>
-										<include>**/**.**</include>
-									</includes>
-									<filtering>true</filtering>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			 -->
+			<!-- <plugin> <artifactId>maven-resources-plugin</artifactId> <version>3.0.2</version> 
+				<executions> <execution> <id>copy-resources</id> <phase>validate</phase> 
+				<goals> <goal>copy-resources</goal> </goals> <configuration> <outputDirectory>src/main/webapp</outputDirectory> 
+				<resources> <resource> <directory>src/main/resources/META-INF/resources</directory> 
+				<includes> <include>**/**.**</include> </includes> <filtering>true</filtering> 
+				</resource> </resources> </configuration> </execution> </executions> </plugin> -->
+
 			<!-- 编译工具 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -135,5 +116,24 @@
 				</configuration>
 			</plugin>
 		</plugins>
+
+		<resources>
+			<resource>
+				<directory>${project.sources}</directory>
+				<filtering>true</filtering>
+				<excludes>
+					<exclude>**/*.woff2</exclude>
+					<exclude>**/*.ttf</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>${project.sources}</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>**/*.woff2</include>
+					<include>**/*.ttf</include>
+				</includes>
+			</resource>
+		</resources>
 	</build>
 </project>
