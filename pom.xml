@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>wang.igood</groupId>
 	<artifactId>admin</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<name>admin Maven Webapp</name>
 	<packaging>jar</packaging>
 
@@ -35,7 +35,7 @@
 		<dependency>
 			<groupId>wang.igood</groupId>
 			<artifactId>db</artifactId>
-			<version>0.0.2</version>
+			<version>0.0.3</version>
 		</dependency>
 		<!-- 加密工具类 -->
 		<dependency>
@@ -77,12 +77,12 @@
 				</executions>
 			</plugin>
 			<!-- 资源拷贝 -->
-			<!-- <plugin> <artifactId>maven-resources-plugin</artifactId> <version>3.0.2</version> 
+			<plugin> <artifactId>maven-resources-plugin</artifactId> <version>3.0.2</version> 
 				<executions> <execution> <id>copy-resources</id> <phase>validate</phase> 
 				<goals> <goal>copy-resources</goal> </goals> <configuration> <outputDirectory>src/main/webapp</outputDirectory> 
 				<resources> <resource> <directory>src/main/resources/META-INF/resources</directory> 
 				<includes> <include>**/**.**</include> </includes> <filtering>true</filtering> 
-				</resource> </resources> </configuration> </execution> </executions> </plugin> -->
+				</resource> </resources> </configuration> </execution> </executions> </plugin>
 
 			<!-- 编译工具 -->
 			<plugin>
@@ -116,7 +116,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-
+		<!-- 
 		<resources>
 			<resource>
 				<directory>${project.sources}</directory>
@@ -135,5 +135,6 @@
 				</includes>
 			</resource>
 		</resources>
+		 -->
 	</build>
 </project>
